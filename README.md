@@ -43,3 +43,10 @@ Below there is an example in three dimensions:
 
 <img src="hc-3d-2i.png">
 
+
+## Acknowledgments
+
+The code was adapted to FreeCad starting from [galtay/hilbertcurve](https://github.com/galtay/hilbertcurve).
+It's written in [python](https://www.python.org).
+Something about the Hilbert Curve on [Wikipedia](https://en.wikipedia.org/wiki/Hilbert_curve).
+Tutorial for [scripting in FreeCad](https://wiki.freecadweb.org/Scripting_and_macros) on the FreeCad wiki.
