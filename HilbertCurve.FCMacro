@@ -1,26 +1,50 @@
 # -*- coding: utf-8 -*-
+
 # Copyright (c) 2020 Simone Bignetti, Gottolengo Italy (simone.b)
 #
 # This file is part of the FreeCAD CAx development system.              *
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
 #
-# This program is distributed in the hope that it will be useful,
+# This library is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Lesser General Public License for more details.
 #
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
+# USA
+#
+# You can contact me by mail at simone.bignetti@linux.it
 
-__Title__   = "Macro_Hilbert_Curve"
-__Author__  = "Simone Bignetti"
-__Version__ = "01.00"
-__Date__    = "2020-12-29"
-__Comment__ = "This macro creates a Hilbert Curve wire in 2 or 3 dimensions with many iterations."
+__Name__ = 'HilbertCurve'
+__Comment__ = 'This macro creates a Hilbert Curve wire in 2 or 3 dimensions with many iterations.'
+__Author__  = 'Simone Bignetti'
+__Version__ = '01.01'
+__Date__    = '2020-12-29'
+__License__ = 'GNU LESSER GENERAL PUBLIC LICENSE Version 2.1, February 1999'
+__Web__ = ''
+__Wiki__ = ''
+__Icon__ = ''
+__Help__ = """Usage:
+In a FreeCAD document start the macro. A dialog appears.
+Choose if the wire is two-dimensional or three-dimensional,
+the number of the iterations and the length of the wire segment.
+Click OK to create the wire or CANCEL to exit the macro.
+You can use the just created wire to do a sweep in the part Workbench, But first of all
+it's better to apply a radius to the wire, or the sweep will be badly formed.
+The size of the radius depends on the length chosen for the curve segments and
+on the shape of the profile you want to sweep.
+Maybe you need to take a few tries."""
+__Status__ = 'Stable'
+__Requires__ = ''
+__Communication__ = ''
+__Files__ = ''
+
 
 import FreeCAD, Draft  # For the wire
 
@@ -129,7 +153,7 @@ class Hilbert_Dialog(QtGui.QDialog):
         self.dimensions = 2
         self.iterations = 3
 
-        self.setGeometry(250, 250, 500, 300)  # Window definition
+        self.setGeometry(250, 250, 400, 300)  # Window definition
         self.setWindowTitle("Hilber Curve Macro")
 
         titleLabel = QtGui.QLabel("Create an Hilbert Curve in two or three dimensions")  # Title and subtitle
